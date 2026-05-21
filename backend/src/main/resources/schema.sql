@@ -1,0 +1,10 @@
+CREATE TABLE IF NOT EXISTS users (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    nombres VARCHAR(255) NOT NULL,
+    apellidos VARCHAR(255) NOT NULL,
+    rut BIGINT NOT NULL UNIQUE,
+    dv VARCHAR(1) NOT NULL,
+    fecha_nacimiento DATE NOT NULL,
+    correo_electronico VARCHAR(255) NOT NULL UNIQUE,
+    contrasena VARCHAR(255) NOT NULL
+);
