@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { User, UserRequest } from '../types/user';
 import { UserService } from '../services/api';
 import { UserTable } from '../components/UserTable';
@@ -10,7 +10,7 @@ import { PlusCircle, CheckCircle2, AlertCircle } from 'lucide-react';
 export default function Home() {
   const [users, setUsers] = useState<User[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  
+
   // Modal state
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingUser, setEditingUser] = useState<User | null>(null);
@@ -110,10 +110,10 @@ export default function Home() {
       {isLoading ? (
         <div style={{ textAlign: 'center', padding: '3rem' }}>Cargando usuarios...</div>
       ) : (
-        <UserTable 
-          users={users} 
-          onEdit={handleOpenEditModal} 
-          onDelete={confirmDelete} 
+        <UserTable
+          users={users}
+          onEdit={handleOpenEditModal}
+          onDelete={confirmDelete}
         />
       )}
 
