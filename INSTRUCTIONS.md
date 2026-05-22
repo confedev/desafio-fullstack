@@ -1,6 +1,6 @@
 # 🚀 Execution Instructions - Fullstack Challenge
 
-## Versión en Español: [INSTRUCTIONS_ES.md](INSTRUCTIONS_ES.md)
+### [Versión en Español](INSTRUCTIONS_ES.md)
 
 ## 📋 Description
 

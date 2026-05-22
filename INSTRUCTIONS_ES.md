@@ -1,6 +1,6 @@
 # 🚀 Instrucciones de Ejecución - Desafío Fullstack
 
-### English version: [INSTRUCTIONS.md](INSTRUCTIONS.md)
+### [English version](INSTRUCTIONS.md)
 
 ## 📋 Descripción
 
