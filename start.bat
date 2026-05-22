@@ -1,11 +1,24 @@
 @echo off
 setlocal enabledelayedexpansion
 
-if "%1%"=="docker" (
-  echo [INFO] Starting services with Docker Compose...
-  docker-compose up --build
-  
-) else if "%1%"=="dev" (
+REM ==================== WARNING ====================
+REM This Windows batch script is NOT FULLY TESTED
+REM It may not work as expected on all systems
+REM For production use, consider using Linux/Mac with start.sh
+REM ===================================================
+
+echo.
+echo ╔════════════════════════════════════════════════╗
+echo ║                     WARNING                      ║
+echo ║  This Windows batch script is NOT FULLY TESTED  ║
+echo ║                                                ║
+echo ║ It may not work as expected on all systems.    ║
+echo ║ For production use, consider using Linux/Mac   ║
+echo ║                 with start.sh                   ║
+echo ╚════════════════════════════════════════════════╝
+echo.
+
+if "%1%"=="dev" (
   echo [INFO] Starting services locally with Maven and npm...
   
   echo [INFO] Starting Backend (Spring Boot with Maven)...
@@ -24,29 +37,23 @@ if "%1%"=="docker" (
   echo [INFO] Frontend URL: http://localhost:5173
   echo [INFO] Close the command windows to stop the services
   
-) else if "%1%"=="stop" (
-  echo [INFO] Stopping Docker services...
-  docker-compose down
-  
-) else if "%1%"=="logs" (
-  echo [INFO] Showing logs...
-  docker-compose logs -f
+) else if "%1%"=="kill" (
+  echo [INFO] Stopping all services...
+  taskkill /F /IM java.exe 2>nul
+  taskkill /F /IM node.exe 2>nul
+  echo [INFO] Services stopped
   
 ) else (
   echo [INFO] Desafio Fullstack - Startup Script
-  echo [INFO] Usage: start.bat [docker^|dev^|stop^|logs]
+  echo [INFO] Usage: start.bat [dev^|kill]
   echo.
   echo [INFO] Options:
-  echo [INFO]   docker   - Start services using Docker Compose
   echo [INFO]   dev      - Start services locally with Maven and npm
-  echo [INFO]   stop     - Stop Docker services
-  echo [INFO]   logs     - Show live logs from Docker services
+  echo [INFO]   kill     - Kill all running services
   echo.
   echo [INFO] Examples:
-  echo [INFO]   start.bat docker
   echo [INFO]   start.bat dev
-  echo [INFO]   start.bat stop
-  echo [INFO]   start.bat logs
+  echo [INFO]   start.bat kill
 )
 
 endlocal
