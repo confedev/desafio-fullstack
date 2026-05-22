@@ -1,0 +1,13 @@
+# TODO
+- [ ] **Password Encryption**: Implement password hashing (e.g., BCrypt) before saving user credentials to the database to ensure baseline security.
+- [ ] **Design Global Error Response DTO**: Create a unified backend DTO response structure mapping an error code and a description so the frontend can easily interpret any failure.
+- [ ] **Implement Core Exception Handlers (400 Bad Request & Generic)**: Set up a global exception handler to catch format/validation errors (returning HTTP 400 with the error DTO) as well as a generic error fallback handler for unexpected exceptions.
+- [ ] **Handle Database Constraints & Specific Error Codes**: Add backend validations for unique database constraints and trigger a highly specific custom error code that the frontend can parse.
+- [ ] **Frontend Error Mapping & Toast Notifications**: Build a generic error mapper on the frontend to parse backend custom error codes and trigger user-friendly toast notifications.
+- [ ] **Implement Fullstack Pagination & Sorting**: Implement pagination logic on the backend API endpoints and integrate corresponding pagination components on the frontend UI.
+- [ ] **Update OpenAPI Documentation**: Document the new pagination parameters, sorting capabilities, and custom error DTO behaviors within the OpenAPI/Swagger specs.
+- [ ] **Dockerization & Startup Scripts**: Generate the Dockerfile, `docker-compose.yml`, and local startup scripts to enable seamless multi-container orchestration.
+- [ ] **Verify Cross-Platform Windows Batch Script**: Test and validate the `.bat` execution script to ensure Windows environments can boot the project smoothly.
+- [ ] **Comprehensive Testing (Backend & Frontend)**: Write robust unit/integration tests on both the backend and frontend to safeguard new logic against regressions.
+- [ ] **Project Compliance Review & Summary**: Perform a complete audit against the original challenge requirements and compile a `summary.md` report.
+- [ ] **Bilingual Setup Documentation (English & Spanish)**: Complete the main setup instructions detailing the project architecture, cross-reference the English/Spanish guides, and specify execution methods.
